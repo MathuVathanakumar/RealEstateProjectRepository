@@ -1,0 +1,107 @@
+﻿@model IEnumerable<RealEstateProject.Models.Owner>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OwnerDetails</title>
+    <style>
+        body{
+            background-color:lavender;
+        }
+        h1{
+            color:red;
+            font-size:40px;
+            text-align:center;
+        }
+        th{
+            color:mediumvioletred;
+            text-align:center;
+            font-size:35px;
+        }
+        td{
+            color:darkblue;
+            text-align:left;
+            font-size:30px;
+        }
+        p{
+            color:maroon;
+            text-align:center;
+            font-size:35px;
+        }
+    </style>
+</head>
+<body>
+    
+        <h1>
+            <u>
+                Owner Details
+            </u>
+        </h1>
+    
+    
+    <center>
+        <table class="table" border="1">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TelNo)
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Details
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TelNo)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.OwnerNo }) 
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.OwnerNo })                    
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.OwnerNo })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </center>
+    <p>
+       Create New: @Html.ActionLink("Create", "Create")
+    </p>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿@model RealEstateProject.Models.Owner
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <style>
+        body {
+            background-color: lavender;
+        }
+
+        h4 {
+            color: red;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        dt {
+            color: mediumvioletred;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        dd {
+            color: darkblue;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        p {
+            color: maroon;
+            text-align: center;
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h4><u>Owner Details</u></h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Fname) :
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Fname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Lname) :
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Lname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Address) :
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TelNo) :
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TelNo)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.OwnerNo }) 
+    </p>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

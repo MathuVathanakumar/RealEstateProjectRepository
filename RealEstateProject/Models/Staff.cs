@@ -16,7 +16,7 @@ namespace RealEstateProject.Models
         public String Fname { get; set; }
         public String Lname { get; set; }
         public String Position { get; set; }
-        [DataType(DataType.Date)]
+        [Column(TypeName ="Date")]
         public DateTime DOB { get; set; }
         public int Salary { get; set; }
 
