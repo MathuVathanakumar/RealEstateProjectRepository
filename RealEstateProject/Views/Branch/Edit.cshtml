@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Edit</title>
 </head>
-<body>
+<body style="background-color:lavender">
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
@@ -20,32 +20,40 @@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>Branch</h4>
+        <center>
+        <div class="form-horizontal" >
+            <h4 style="color:red;font-size:30px">Branch</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.BranchNo)
     
-            <div class="form-group">
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.BranchNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
+                    @Html.EditorFor(model => model.BranchNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BranchNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="color:mediumvioletred;font-size:25px" >
                 @Html.LabelFor(model => model.Street, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div class="col-md-10"style="color:mediumvioletred;font-size:20px">
                     @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Street, "", new { @class = "text-danger" })
                 </div>
             </div>
     
-            <div class="form-group">
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
                 @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
                     @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
                 </div>
             </div>
     
-            <div class="form-group">
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
                 @Html.LabelFor(model => model.Postcode, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
                     @Html.EditorFor(model => model.Postcode, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Postcode, "", new { @class = "text-danger" })
                 </div>
@@ -53,14 +61,16 @@
     
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
+                    <input type="submit" value="Save" class="btn btn-default" style="color:darkblue;font-size:20px" />
                 </div>
             </div>
         </div>
+            </center>
     }
-    
+    <center>
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
+    </center>
 </body>
 </html>

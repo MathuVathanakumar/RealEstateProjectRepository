@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RealEstateProject.Models.Branch>
+﻿@model IEnumerable<RealEstateProject.Models.Staff>
 
 @{
     Layout = null;
@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Branch Details</title>
+    <title>Staff Details</title>
     <style>
         body {
             background-color: lavender;
@@ -43,23 +43,32 @@
 <body>
     <h1>
         <u>
-            Branch Details
+            Staff Details
         </u>
     </h1>
     <center>
     <table class="table" border="1">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BranchNo)
+                @Html.DisplayNameFor(model => model.StaffNo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Street)
+                @Html.DisplayNameFor(model => model.Fname)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.City)
+                @Html.DisplayNameFor(model => model.Lname)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Postcode)
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.branches.BranchNo)
             </th>
             <th>
                 Edit
@@ -75,33 +84,44 @@
     @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.BranchNo)
+                @Html.DisplayFor(modelItem => item.StaffNo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Street)
+                @Html.DisplayFor(modelItem => item.Fname)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.City)
+                @Html.DisplayFor(modelItem => item.Lname)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Postcode)
+                @Html.DisplayFor(modelItem => item.Position)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.BranchNo }) 
-              </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.BranchNo })                 
+                @Html.DisplayFor(modelItem => item.DOB)
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.BranchNo })
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.branches.BranchNo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.StaffNo }) 
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.StaffNo })
+            
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.StaffNo })
             </td>
         </tr>
     }
     
     </table>
-        </center>
+    </center>
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
+
 </body>
 </html>

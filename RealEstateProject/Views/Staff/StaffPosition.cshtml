@@ -1,0 +1,27 @@
+﻿@model IEnumerable<RealEstateProject.Models.Staff>
+@using RealEstateProject.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StaffPosition</title>
+</head>
+<body style="background-color:gainsboro">
+   <div style="color:darkcyan;font-size:20px">
+        <h1 style="color:crimson"><u>Staff Position</u></h1>
+
+
+        @foreach (Staff staff in Model)
+            {
+            @Html.ActionLink(staff.Position, "StaffName", new { @id = staff.Position })
+            <br />
+        }
+    </div>
+</body>
+</html>

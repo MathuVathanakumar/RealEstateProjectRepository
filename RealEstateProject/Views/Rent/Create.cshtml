@@ -1,0 +1,114 @@
+﻿@model RealEstateProject.Models.Rent
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        <center>
+        <div class="form-horizontal">
+            <h4 style="color:red;font-size:30px">Rent</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.PropertyNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10"style="color:mediumvioletred;font-size:20px">
+                    @Html.EditorFor(model => model.PropertyNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PropertyNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.Street, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
+                    @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Street, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
+                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.Ptype, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
+                    @Html.EditorFor(model => model.Ptype, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ptype, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.Rooms, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
+                    @Html.EditorFor(model => model.Rooms, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Rooms, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.RefOwnerNo, "RefOwnerNo", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
+                    @Html.DropDownListFor(model => model.RefOwnerNo, new SelectList(ViewBag.OwnerDetails, "OwnerNo", "OwnerNo"), "Select the Owner No")
+                    @Html.ValidationMessageFor(model => model.RefOwnerNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.RefStaffNo, "RefStaffNo", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
+                    @Html.DropDownListFor(model => model.RefStaffNo, new SelectList(ViewBag.StaffDetails, "StaffNo", "StaffNo"), "Select the Staff No")
+                    @Html.ValidationMessageFor(model => model.RefStaffNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.RefBranchNo, "RefBranchNo", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
+                    @Html.DropDownListFor(model => model.RefBranchNo, new SelectList(ViewBag.BranchDetails, "BranchNo", "BranchNo"), "Select the Branch No")
+                    @Html.ValidationMessageFor(model => model.RefBranchNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group" style="color:mediumvioletred;font-size:25px">
+                @Html.LabelFor(model => model.Rent1, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="color:mediumvioletred;font-size:20px">
+                    @Html.EditorFor(model => model.Rent1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Rent1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default " style="color:darkblue;font-size:20px" />
+                </div>
+            </div>
+        </div>
+        </center>
+    }
+    <center>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    </center>
+</body>
+</html>

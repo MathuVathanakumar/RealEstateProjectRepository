@@ -1,0 +1,26 @@
+﻿@model List<RealEstateProject.Models.Staff>
+@using RealEstateProject.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StaffName</title>
+</head>
+<body style="background-color:gainsboro">
+    <div style="color:darkcyan;font-size:20px">
+        <h1 style="color:crimson"><u>Staffs Names under the selected Position</u></h1>
+        @foreach (Staff staffs in Model)
+        {
+
+            @Html.ActionLink(staffs.Fname, "StaffDetails", new { @id = staffs.StaffNo })
+            <br />
+        }
+    </div>
+</body>
+</html>

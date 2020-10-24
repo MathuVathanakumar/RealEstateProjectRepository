@@ -17,27 +17,26 @@
 
         h4 {
             color: red;
-            font-size: 40px;
+            font-size: 30px;
             text-align: center;
         }
 
         dt {
             color: mediumvioletred;
-            text-align: center;
-            font-size: 35px;
+            font-size: 25px;
             
         }
 
         dd {
             color: darkblue;
-            text-align: center;
-            font-size: 25px;
+            font-size: 20px;
+            
         }
 
         p {
             color: maroon;
             text-align: center;
-            font-size: 35px;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -83,7 +82,7 @@
     
         @using (Html.BeginForm()) {
             @Html.AntiForgeryToken()
-            <center>
+            
                 <div class="form-actions no-color">
                     <input type="submit" value="Delete" class="btn btn-default" style="color:darkblue;font-size:20px" /> 
 
@@ -92,7 +91,7 @@
                 <div style="color:darkblue;font-size:25px">
                     @Html.ActionLink("Back to Owner Details", "Index")
                 </div>
-            </center>
+            
         }
     </div>
 </body>

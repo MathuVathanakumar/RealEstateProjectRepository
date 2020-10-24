@@ -1,0 +1,124 @@
+﻿@model RealEstateProject.Models.Rent
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <style>
+        body {
+            background-color: lavender;
+        }
+
+        h4 {
+            color: red;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        dt {
+            color: mediumvioletred;
+            font-size: 25px;
+        }
+
+        dd {
+            color: darkblue;
+            font-size: 20px;
+        }
+
+        p {
+            color: maroon;
+            text-align: left;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h4>Rent</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PropertyNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PropertyNo)
+            </dd>        
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Street)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Street)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Ptype)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Ptype)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Rooms)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Rooms)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.owners.OwnerNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.owners.OwnerNo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.staffs.StaffNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.staffs.StaffNo)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.branches.BranchNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.branches.BranchNo)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Rent1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Rent1)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PropertyNo })        
+    </p>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

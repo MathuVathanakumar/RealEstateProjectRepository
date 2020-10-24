@@ -1,4 +1,4 @@
-﻿@model RealEstateProject.Models.Owner
+﻿@model RealEstateProject.Models.Staff
 
 @{
     Layout = null;
@@ -40,11 +40,20 @@
 </head>
 <body>
     <div>
-        <h4><u>Owner Details</u></h4>
+        <h4>Staff</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.Fname) :
+                @Html.DisplayNameFor(model => model.StaffNo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.StaffNo)
+            </dd>
+    
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Fname)
             </dt>
     
             <dd>
@@ -52,7 +61,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.Lname) :
+                @Html.DisplayNameFor(model => model.Lname)
             </dt>
     
             <dd>
@@ -60,25 +69,40 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.Address) :
+                @Html.DisplayNameFor(model => model.Position)
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.Address)
+                @Html.DisplayFor(model => model.Position)
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.TelNo) :
+                @Html.DisplayNameFor(model => model.DOB)
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.TelNo)
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Salary)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Salary)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.branches.BranchNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.branches.BranchNo)
             </dd>
     
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.OwnerNo }) 
+        @Html.ActionLink("Edit", "Edit", new { id = Model.StaffNo })        
     </p>
     <p>
         @Html.ActionLink("Back to List", "Index")

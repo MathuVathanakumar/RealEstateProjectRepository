@@ -1,0 +1,140 @@
+﻿@model IEnumerable<RealEstateProject.Models.Rent>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Rent Details</title>
+    <style>
+        body {
+            background-color: lavender;
+        }
+
+        h1 {
+            color: red;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        th {
+            color: mediumvioletred;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        td {
+            color: darkblue;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        p {
+            color: maroon;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <u>
+            Rent Details
+        </u>
+    </h1>
+    <center>
+        <table class="table" border="1">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PropertyNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Street)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ptype)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rooms)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.owners.OwnerNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.staffs.StaffNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.branches.BranchNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rent1)
+                </th>
+
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Details
+                </th>
+                <th>
+                    Delete
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PropertyNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ptype)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rooms)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.owners.OwnerNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.staffs.StaffNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.branches.BranchNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rent1)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PropertyNo })                         
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.PropertyNo })                         
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PropertyNo })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </center>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+</body>
+</html>

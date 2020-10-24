@@ -10,12 +10,46 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
+    <style>
+        body {
+            background-color: lavender;
+        }
+
+        h4 {
+            color: red;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        dt {
+            color: mediumvioletred;
+            font-size: 25px;
+        }
+
+        dd {
+            color: darkblue;
+            font-size: 20px;
+        }
+
+        p {
+            color: maroon;
+            text-align: left;
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
     <div>
         <h4>Branch</h4>
         <hr />
         <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BranchNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BranchNo)
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.Street)
             </dt>
@@ -43,7 +77,9 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.BranchNo }) |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BranchNo })        
+    </p>
+    <p>
         @Html.ActionLink("Back to List", "Index")
     </p>
 </body>

@@ -1,0 +1,79 @@
+﻿@model RealEstateProject.Models.Staff
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StaffDetails</title>
+    <style>
+        dt{
+            color:blue;
+        }
+    </style>
+</head>
+<body style="background-color:gainsboro">
+    <div style="color:darkcyan;font-size:20px">
+        <h4 style="color:crimson"><u>Staff Details</u></h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.StaffNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StaffNo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Lname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Position)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Position)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DOB)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Salary)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Salary)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.StaffNo }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
