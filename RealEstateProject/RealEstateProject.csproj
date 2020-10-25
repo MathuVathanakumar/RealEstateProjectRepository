@@ -168,6 +168,8 @@
     <Content Include="Views\Rent\City.cshtml" />
     <Content Include="Views\Rent\Property.cshtml" />
     <Content Include="Views\Rent\PropertyDetails.cshtml" />
+    <Content Include="Views\Branch\BranchCount.cshtml" />
+    <Content Include="Views\Rent\BuildingCount.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

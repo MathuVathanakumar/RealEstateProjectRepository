@@ -67,5 +67,11 @@ namespace RealEstateProject.Controllers
             realEstateContext.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult BranchCount()
+        {
+            List<Branch> branch = realEstateContext.branches.ToList();
+            return View(branch);
+        }
     }
 }

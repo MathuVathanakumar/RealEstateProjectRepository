@@ -17,7 +17,7 @@
         <h1 style="color:crimson"><u>Staff Position</u></h1>
 
 
-        @foreach (Staff staff in Model)
+        @foreach ( Staff staff in Model)
             {
             @Html.ActionLink(staff.Position, "StaffName", new { @id = staff.Position })
             <br />

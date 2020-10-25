@@ -1,0 +1,39 @@
+﻿@model IEnumerable<RealEstateProject.Models.Rent>
+@using RealEstateProject.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BuildingCount</title>
+</head>
+<body style="background-color:gainsboro">
+    <div style="color:darkcyan;font-size:20px">
+        <h1 style="color:crimson"><u>Building Count</u></h1>
+       
+        <label style="color:mediumblue;font-size:25px">Property No:</label>
+        <br />
+         @{
+            int count = 0;
+
+            foreach (Rent rents in Model)
+            {
+            
+                    @Html.ActionLink(rents.PropertyNo, null, new { @id = rents.RefBranchNo })
+                <br />
+                    count++;
+
+            }
+
+            }
+        <p>
+            <label style="color:mediumblue;font-size:25px">No of buildings managed by the selected branch :</label> @count
+        </p>
+    </div>
+</body>
+</html>

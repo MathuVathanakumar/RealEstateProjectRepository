@@ -98,6 +98,10 @@ namespace RealEstateProject.Controllers
             return View(rent);
         }
 
-        
+        public ActionResult BuildingCount(String id)
+        {
+            List<Rent> building = realEstateContexts.rents.Where(x => x.RefBranchNo == id).ToList();
+            return View(building);
+        }
     }
 }
